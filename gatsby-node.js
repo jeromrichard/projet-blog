@@ -1,7 +1,27 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
 
-// You can delete this file if you're not using it
+// Create pages dynamically
+
+exports.createPages = async ({graphql, actions}) => {
+    const { createPage } = actions
+    const result = await graphql(`
+    query getBlogposts {
+          articles:allAirtable(filter: {table: {eq: "Blogposts"}}) {
+            nodes {
+              data {
+                slug
+              }
+            }
+          }
+        }
+    `)
+    result.data.articles.nodes.forEach((article)=> {
+        createPage({
+            path:`/article/${article.data.slug}`,    
+            component: path.resolve(`src/template/article.js`),
+            context: {
+                slug: article.data.slug
+            }
+        })
+    })
+}

@@ -1,16 +1,51 @@
-import React from "react"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
-const SecondPage = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+const Menu = () => {
+  const data = useStaticQuery(graphql`
+    query MenuQuery {
+      allAirtable(
+        filter: { table: { eq: "Blogposts" } }
+        sort: { fields: data___Titre_Article, order: DESC }
+      ) {
+        nodes {
+          data {
+           Titre_Article
+            Intro    
+          }
+          recordId
+        }
+      }
+    }
+  `);
 
-export default SecondPage
+  return (
+    <div>
+      <layout>
+        <div>
+          <h3>Blogposts</h3>
+            <table>
+                    <thead>
+                      <tr>
+                            <th>Titre article</th>
+                            <th>Intro</th>
+                      </tr>
+                    </thead>
+                      <tbody>
+                        {data.allAirtable.nodes.map((item, i) => (
+                          <tr key={item.recordId}>
+                            <td><Link to={`/article/${item.data.Slug}`}>{item.data.Titre_Article}</Link></td>
+                            <td>{item.data.Intro}</td>                          
+                          </tr>
+                         ))}
+                      </tbody>
+            </table>
+        </div>
+      </layout>
+    </div>
+  );
+};
+
+export default Menu;
