@@ -12,7 +12,7 @@ const ComponentName = ({ data: {client: {data: {Titre_Article, Body}}} }) => {
                 <SEO title="Page client"/>
                 <h1>Client</h1>
                         <p>{Titre_Article}</p>
-                        <p>{ Body}</p>
+                        <p>{Body}</p>
 
 
             </div>
@@ -26,7 +26,7 @@ const ComponentName = ({ data: {client: {data: {Titre_Article, Body}}} }) => {
 
 export const query = graphql`
     query GetSingleClient($slug: String) {
-        client: airtable(data: {slug: {eq: $slug}}) {
+        client: allAirtable(data: {slug: {eq: $slug}}) {
             id
             data {
                Titre_Article
