@@ -24,7 +24,7 @@ const ComponentName = ({ data: {client: {data: {Titre_Article, Body}}} }) => {
 }
 
 export const query = graphql`
-    query GetSingleBloposts($slug: String) {
+    query GetSingleBlogposts($slug: String) {
         client: airtable(data: {slug: {eq: $slug}}) {
             id
             data {
