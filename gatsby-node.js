@@ -11,8 +11,8 @@ const path = require('path');
 exports.createPages = async ({graphql, actions}) => {
     const { createPage } = actions
     const result = await graphql(`
-    query getBlogposts {
-          blogposts:allAirtable(filter: {table: {eq: "Blogposts"}}) {
+    query getClient {
+          clients:allAirtable(filter: {table: {eq: "Blogposts"}}) {
             nodes {
               data {
                 slug
