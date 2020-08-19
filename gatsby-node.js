@@ -12,7 +12,7 @@ exports.createPages = async ({graphql, actions}) => {
     const { createPage } = actions
     const result = await graphql(`
     query getBlogposts {
-          clients:allAirtable(filter: {table: {eq: "Blogposts"}}) {
+          blogposts:allAirtable(filter: {table: {eq: "Blogposts"}}) {
             nodes {
               data {
                 slug
