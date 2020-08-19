@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 
 const ComponentName = ({ data: {client: {data: {Titre_Article, Body}}} }) => {
-    return <div>
+    return (<div>
         <Layout>
             <div>
                 <SEO title="Page client"/>
@@ -16,11 +16,12 @@ const ComponentName = ({ data: {client: {data: {Titre_Article, Body}}} }) => {
 
 
             </div>
-            <p><Link to="/page-2/">Go back to Collaborateur</Link></p>
+                <p><Link to="/page-2/">Go back to Collaborateur</Link></p>
 
-            <p><Link to="/">Go back to the homepage</Link></p>
+                <p><Link to="/">Go back to the homepage</Link></p>
         </Layout>
     </div>
+    )
 }
 
 export const query = graphql`
