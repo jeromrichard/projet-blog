@@ -13,7 +13,8 @@ const Menu = () => {
         nodes {
           data {
            Titre_Article
-            Intro    
+            Intro  
+      
           }
           recordId
         }
@@ -36,13 +37,14 @@ const Menu = () => {
                       <tbody>
                         {data.allAirtable.nodes.map((item, i) => (
                           <tr key={item.recordId}>
-                            <td><Link to={`/article/${item.data.Slug}`}>{item.data.Titre_Article}</Link></td>
+                            <td><Link to={`/Article/${item.data.slug}`}>{item.data.Titre_Article}</Link></td>
                             <td>{item.data.Intro}</td>                          
                           </tr>
                          ))}
                       </tbody>
             </table>
         </div>
+        <Link to="/">Accueil</Link> <br />
       </layout>
     </div>
   );
