@@ -14,7 +14,7 @@ const Menu = () => {
           data {
            Titre_Article
             Intro  
-      
+            slug
           }
           recordId
         }
