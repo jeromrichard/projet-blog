@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from "gatsby"
+
 import Layout from "../components/layout"
 
 const Menu = () => {
@@ -23,8 +24,9 @@ const Menu = () => {
   `);
 
   return (
+    
     <div>
-      <layout>
+      <Layout>
         <div>
           <h3>Blogposts</h3>
             <table>
@@ -45,8 +47,9 @@ const Menu = () => {
             </table>
         </div>
         <Link to="/">Accueil</Link> <br />
-      </layout>
+        </Layout>
     </div>
+    
   );
 };
 
