@@ -5,13 +5,19 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 
-const ComponentName = ({ data: {client: {data: {Titre_Article, Body}}} }) => {
+const ComponentName = ({ data: {client: {data: {Titre_Article, Body, image_détail}}} }) => {
     return (<div>
         <Layout>
             <div>
                 <SEO title="Page client"/>
                
                         <h1 style={{color: `red`}}>{Titre_Article}</h1>
+
+                        <Img
+                            fluid={image_détail}
+                            alt=""
+                            style={{ border: "2px solid rebeccapurple", borderRadius: 5, height: 250 }}
+                        />
                         
                         <p>{Body}</p>
 
@@ -32,7 +38,9 @@ export const query = graphql`
             data {
                Titre_Article
                Body
-              
+                img{
+                    image_détail
+                }
             }
         }
     }
