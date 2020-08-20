@@ -39,7 +39,7 @@ const Menu = () => {
                       <tbody>
                         {data.allAirtable.nodes.map((item, i) => (
                           <tr key={item.recordId}>
-                            <td><Link to={`/Client/${item.data.slug}`}>{item.data.Titre_Article}</Link></td>
+                            <td style={{color: `red`}}><Link to={`/Client/${item.data.slug}`}>{item.data.Titre_Article}</Link></td>
                             <td>{item.data.Intro}</td>                          
                           </tr>
                          ))}
