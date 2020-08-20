@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 
-const ComponentName = ({ data: {client: {data: {Titre_Article, Body, image_détail}}} }) => {
+const ComponentName = ({ data: {client: {data: {Titre_Article, Body}}} }) => {
     return (<div>
         <Layout>
             <div>
@@ -13,12 +13,7 @@ const ComponentName = ({ data: {client: {data: {Titre_Article, Body, image_déta
                
                         <h1 style={{color: `red`}}>{Titre_Article}</h1>
 
-                        <Img
-                            fluid={image_détail}
-                            alt=""
-                            style={{ border: "2px solid rebeccapurple", borderRadius: 5, height: 250 }}
-                        />
-                        
+                      
                         <p>{Body}</p>
 
 
@@ -38,10 +33,7 @@ export const query = graphql`
             data {
                Titre_Article
                Body
-                image{
-                    image_détail
-                }
-            }
+               
         }
     }
 `
