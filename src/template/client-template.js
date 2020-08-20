@@ -11,7 +11,7 @@ const ComponentName = ({ data: {client: {data: {Titre_Article, Body}}} }) => {
             <div>
                 <SEO title="Page client"/>
                
-                        <p style={{color: `red`}}>{Titre_Article}</p>
+                        <h1 style={{color: `red`}}>{Titre_Article}</h1>
                         
                         <p>{Body}</p>
 
