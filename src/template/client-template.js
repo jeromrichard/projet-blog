@@ -33,7 +33,7 @@ export const query = graphql`
             data {
                Titre_Article
                Body
-               
+            }  
         }
     }
 `
