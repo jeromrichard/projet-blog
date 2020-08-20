@@ -15,7 +15,7 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/page-2/">Site Web</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    
   </Layout>
 )
 
