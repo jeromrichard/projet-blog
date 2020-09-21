@@ -18,9 +18,9 @@ const ComponentName = ({ data: {client: {data: {Titre_Article, Body, Date_de_cre
 
 
             </div>
-                <p><Link to="/page-2/">Go back to Site web</Link></p>
+                <p><Link to="/page-2/">Retourner à la page site web</Link></p>
 
-                <p><Link to="/">Go back to the homepage</Link></p>
+                <p><Link to="/">Retourner à l'accueil</Link></p>
         </Layout>
     </div>
     )
